@@ -18,6 +18,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.RadioButton
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.Button
+import androidx.compose.ui.res.stringResource
+import androidx.compose.foundation.layout.fillMaxWidth
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -78,5 +81,18 @@ fun FormDataDiri(modifier: Modifier) {
                 textAlamat = it
             }
         )
+
+        // 4. Tombol Simpan Data
+        Button(
+            modifier = Modifier.fillMaxWidth(fraction = 1f),
+            enabled = textAlamat.isNotEmpty(),
+            onClick = {
+                nama = textNama
+                jenis = textJK
+                alamat = textAlamat
+            }
+        ) {
+            Text(stringResource(id = R.string.submit))
+        }
     }
 }
