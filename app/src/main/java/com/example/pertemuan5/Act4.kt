@@ -24,6 +24,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.CardDefaults
+import androidx.compose.foundation.layout.height
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -108,5 +111,15 @@ fun FormDataDiri(modifier: Modifier) {
             color = Color.DarkGray
         )
 
+        // 6. Elevated Card untuk Menampilkan Hasil
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.Black),
+            modifier = Modifier
+                .height(100.dp)
+                .width(300.dp)
+        ) {
+            // Isi card akan ditambahkan di sini
+        }
     }
 }
