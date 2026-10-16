@@ -21,6 +21,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Button
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -94,5 +97,16 @@ fun FormDataDiri(modifier: Modifier) {
         ) {
             Text(stringResource(id = R.string.submit))
         }
+
+        // 5. Horizontal Divider
+        HorizontalDivider(
+            modifier = Modifier.padding(
+                bottom = dimensionResource(id = R.dimen.padding_medium),
+                top = dimensionResource(id = R.dimen.padding_medium)
+            ),
+            thickness = dimensionResource(id = R.dimen.divider_tipis),
+            color = Color.DarkGray
+        )
+
     }
 }
