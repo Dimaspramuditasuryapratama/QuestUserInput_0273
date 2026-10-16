@@ -15,6 +15,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.RadioButton
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.layout.Row
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
@@ -45,5 +48,24 @@ fun FormDataDiri(modifier: Modifier) {
                 textNama = it
             }
         )
+
+        // 2. Pilihan Jenis Kelamin
+        Row {
+            gender.forEach { item ->
+                Row(
+                    modifier = Modifier.selectable(
+                        selected = textJK == item,
+                        onClick = { textJK = item }
+                    ),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    RadioButton(
+                        selected = textJK == item,
+                        onClick = { textJK = item }
+                    )
+                    Text(item)
+                }
+            }
+        }
     }
 }
