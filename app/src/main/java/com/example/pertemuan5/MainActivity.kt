@@ -9,7 +9,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.pertemuan5.ui.theme.Pertemuan5Theme
-
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,10 +21,20 @@ class MainActivity : ComponentActivity() {
             Pertemuan5Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     FormDataDiri(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .verticalScroll(rememberScrollState())
                     )
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun FormDataDiriPreview() {
+    Pertemuan5Theme {
+        FormDataDiri(modifier = Modifier)
     }
 }
